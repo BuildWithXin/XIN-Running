@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跑步路线 — Xin Running</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="results.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page page-results">
+    <div class="page-glow" aria-hidden="true"></div>
+
+    <header class="results-header">
+      <a href="index.html" class="back-link">&larr; 重新探索</a>
+      <div class="logo logo-sm">Xin Running</div>
+    </header>
+
+    <section class="results-summary" aria-label="搜索摘要">
+      <p class="results-eyebrow">为你精选的三条路线</p>
+      <h1 id="results-title" class="results-title">正在加载路线…</h1>
+      <p id="results-meta" class="results-meta"></p>
+      <ol id="quick-picks" class="quick-picks" aria-label="路线名称"></ol>
+    </section>
+
+    <section class="map-section" aria-label="路线地图">
+      <div id="map" class="map"></div>
+    </section>
+
+    <main id="recommendations" class="recommendations" aria-label="推荐跑步地点"></main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Xin Running · 与城市一起呼吸</p>
+    </footer>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="sample-data.js"></script>
+  <script src="results.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xin Running — 跑向城市</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <div class="page-glow" aria-hidden="true"></div>
+
+    <header class="header">
+      <div class="logo">
+        <span class="logo-mark" aria-hidden="true">🏃</span>
+        Xin Running
+      </div>
+      <p class="slogan">用脚步，读懂一座城。</p>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <p class="hero-eyebrow">城市跑步 · 自然相遇</p>
+        <h1 class="hero-title">开始你的城市跑步探索</h1>
+        <p class="hero-lead">
+          清晨的公园、河岸的微风、陌生却动人的街角——<br>
+          无论出差还是旅行，都值得用一场跑来认识这座城市。
+        </p>
+      </section>
+
+      <section class="hero-card">
+        <p class="hero-card-intro">告诉我们你的位置，Xin Running 为你找到最适合的跑步路线。</p>
+
+        <form id="explore-form" class="explore-form" action="results.html" method="get" novalidate>
+          <div class="form-group">
+            <label for="city">城市</label>
+            <input
+              type="text"
+              id="city"
+              name="city"
+              placeholder="例如：上海、东京、巴黎"
+              autocomplete="address-level2"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="hotel">酒店位置</label>
+            <input
+              type="text"
+              id="hotel"
+              name="hotel"
+              placeholder="例如：柏悦酒店、外滩华尔道夫"
+              autocomplete="off"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="distance">跑步距离</label>
+            <select id="distance" name="distance" required>
+              <option value="" disabled selected>选择你今天的跑步距离</option>
+              <option value="short">轻松跑 — 3 公里以内</option>
+              <option value="medium">日常跑 — 3 至 7 公里</option>
+              <option value="long">长距离 — 7 至 12 公里</option>
+              <option value="marathon">备马训练 — 12 公里以上</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-start">开始探索</button>
+        </form>
+
+        <p id="form-message" class="form-message" aria-live="polite"></p>
+      </section>
+
+      <blockquote class="hero-quote">
+        <p>「最好的城市记忆，往往是跑出来的。」</p>
+      </blockquote>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Xin Running · 与城市一起呼吸</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
