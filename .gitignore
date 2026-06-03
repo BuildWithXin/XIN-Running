@@ -1,5 +1,5 @@
 # 不要上传真实 API Key（本地保留 config.js，GitHub 用 config.example.js 作模板）
-config.js
+# config.js
 
 # 系统文件
 .DS_Store
