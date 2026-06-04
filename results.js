@@ -319,9 +319,11 @@
   }
 
   function bootstrap() {
+    console.log("bootstrap启动");
     var search = readSearchParams();
 
     loadAmap(function (err) {
+      console.log("loadAmap回调", err);
       if (err) {
         var fallbackLocations = XinRunningData.getRecommendations(search.city);
         if (fallbackLocations.length > MAX_RECOMMENDATIONS) {
