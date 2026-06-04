@@ -285,9 +285,9 @@
       return;
     }
 
-    var knownCenter = XinRunningData.getCityCenter(search.city);
-    var initialCenter = knownCenter ||
-      (locations[0] ? [locations[0].lng, locations[0].lat] : [121.473701, 31.230416]);
+    var initialCenter = locations[0]
+    ? [locations[0].lng, locations[0].lat]
+    : (XinRunningData.getCityCenter(search.city) || [121.473701, 31.230416]);
 
     var map = new AMap.Map("map", {
       zoom: 13,
