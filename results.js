@@ -304,6 +304,15 @@
     });
 
     var markers = addRouteMarkers(map, locations, infoWindow);
+    var startMarker = new AMap.Marker({
+      position: initialCenter,
+      title: search.hotel || "当前位置",
+      content: '<div style="background:#1f6feb;color:white;padding:6px 10px;border-radius:18px;font-size:14px;font-weight:bold;">📍 起点</div>',
+      offset: new AMap.Pixel(-24, -24)
+    });
+    
+    map.add(startMarker);
+    markers.push(startMarker);
 
     map.setCity(search.city, function () {
       if (markers.length > 0) {
