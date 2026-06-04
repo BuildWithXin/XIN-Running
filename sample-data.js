@@ -28,7 +28,7 @@
       routes: [
         {
           rank: 1,
-          name: "外滩滨江步道",
+name: "世纪公园（3公里轻松环线）",
           distanceFromHotel: "0.5 公里",
           lng: 121.497835,
           lat: 31.236342,
@@ -40,7 +40,7 @@
         },
         {
           rank: 2,
-          name: "世纪公园环线",
+          name: "陆家嘴滨江步道（5公里江景路线）",
           distanceFromHotel: "1.8 公里",
           lng: 121.551991,
           lat: 31.210704,
@@ -52,7 +52,7 @@
         },
         {
           rank: 3,
-          name: "徐汇滨江绿道",
+          name: "前滩休闲公园（8公里绿道）",
           distanceFromHotel: "1.2 公里",
           lng: 121.465234,
           lat: 31.188876,
