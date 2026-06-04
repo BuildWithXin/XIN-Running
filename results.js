@@ -269,7 +269,9 @@
     console.log("进入geocodeCity");
     AMap.plugin(["AMap.Geocoder"], function () {
       console.log("Geocoder插件加载成功");
-      var geocoder = new AMap.Geocoder({ city: city });
+      var geocoder = new AMap.Geocoder({
+        city: "全国"
+      });
       geocoder.getLocation(city, function (status, result) {
         console.log("getLocation返回", status, result);
         if (status === "complete" && result.geocodes && result.geocodes.length) {
