@@ -344,8 +344,9 @@
       }
 
      
-
+      console.log("开始地理编码");
       geocodeCity(search.hotel || search.city, function (geoErr, lng, lat) {
+        console.log("地理编码返回", geoErr, lng, lat);
         if (geoErr) {
           finish(121.473701, 31.230416);
           return;
