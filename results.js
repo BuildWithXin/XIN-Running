@@ -266,22 +266,40 @@
   }
 
   function geocodeCity(city, callback) {
-    console.log("进入geocodeCity");
-    AMap.plugin(["AMap.Geocoder"], function () {
-      console.log("Geocoder插件加载成功");
-      var geocoder = new AMap.Geocoder({
-        city: "全国"
-      });
-      geocoder.getLocation(city, function (status, result) {
-        console.log("getLocation返回", status, result);
-        if (status === "complete" && result.geocodes && result.geocodes.length) {
-          var geo = result.geocodes[0].location;
-          callback(null, geo.lng, geo.lat);
+    var key = window.XIN_RUNNING_CONFIG && window.XIN_RUNNING_CONFIG.amapKey;
+  
+    console.log("进入geocodeCity", city, key ? "有key" : "没key");
+  
+    if (!key) {
+      callback(new Error("缺少高德地图 key"));
+      return;
+    }
+  
+    var url =
+      "https://restapi.amap.com/v3/geocode/geo?address=" +
+      encodeURIComponent(city) +
+      "&key=" +
+      encodeURIComponent(key);
+  
+    fetch(url)
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        console.log("高德HTTP地理编码返回", data);
+  
+        if (data.status === "1" && data.geocodes && data.geocodes.length) {
+          var parts = data.geocodes[0].location.split(",");
+          callback(null, Number(parts[0]), Number(parts[1]));
           return;
         }
-        callback(new Error("无法定位城市：" + city));
+  
+        callback(new Error("无法定位地点：" + city));
+      })
+      .catch(function (err) {
+        console.log("高德HTTP地理编码失败", err);
+        callback(err);
       });
-    });
   }
 
   function initMap(search, locations) {
