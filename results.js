@@ -266,7 +266,7 @@
   }
 
   function geocodeCity(city, callback) {
-    AMap.plugin("AMap.Geocoder", function () {
+    AMap.plugin(["AMap.Geocoder"], function () {
       var geocoder = new AMap.Geocoder({ city: city });
       geocoder.getLocation(city, function (status, result) {
         if (status === "complete" && result.geocodes && result.geocodes.length) {
