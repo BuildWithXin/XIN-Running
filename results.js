@@ -343,7 +343,7 @@
         return;
       }
 
-      geocodeCity(search.city, function (geoErr, lng, lat) {
+      geocodeCity(search.hotel || search.city, function (geoErr, lng, lat) {
         if (geoErr) {
           var known = XinRunningData.getCityCenter("上海");
           finish(known[0], known[1]);
