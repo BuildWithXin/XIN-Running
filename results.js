@@ -266,9 +266,12 @@
   }
 
   function geocodeCity(city, callback) {
+    console.log("进入geocodeCity");
     AMap.plugin(["AMap.Geocoder"], function () {
+      console.log("Geocoder插件加载成功");
       var geocoder = new AMap.Geocoder({ city: city });
       geocoder.getLocation(city, function (status, result) {
+        console.log("getLocation返回", status, result);
         if (status === "complete" && result.geocodes && result.geocodes.length) {
           var geo = result.geocodes[0].location;
           callback(null, geo.lng, geo.lat);
