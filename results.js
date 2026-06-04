@@ -350,9 +350,9 @@
           finish(121.473701, 31.230416);
           return;
         }
+      
         finish(lng, lat);
       });
-    });
   }
 
   function init() {
