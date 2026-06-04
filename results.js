@@ -150,7 +150,7 @@
           '<span class="rec-rank">#' + location.rank + "</span>" +
           '<div class="rec-heading">' +
             '<h2 class="rec-name">' + location.name + "</h2>" +
-            '<p class="rec-distance">距酒店 ' + location.distanceFromHotel + "</p>" +
+            '<p class="rec-distance">距离当前位置 ' + location.distanceFromHotel + '</p>' +
           "</div>" +
           '<div class="rec-overall">' +
             '<span class="rec-overall-value">' + location.overallScore + "</span>" +
