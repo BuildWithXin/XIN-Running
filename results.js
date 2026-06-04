@@ -356,6 +356,7 @@
       
         finish(lng, lat);
       });
+    });
   }
 
   function init() {
