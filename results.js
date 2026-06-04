@@ -262,8 +262,8 @@
   }
 
   function resolveLocations(search, centerLng, centerLat) {
-    if (XinRunningData.resolveCityKey(search.city)) {
-      return XinRunningData.getRecommendations(search.city);
+    function resolveLocations(search, centerLng, centerLat) {
+      return XinRunningData.getRecommendations(search.city, centerLng, centerLat);
     }
     return XinRunningData.getRecommendations(search.city, centerLng, centerLat);
   }
