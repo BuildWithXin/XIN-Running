@@ -343,11 +343,7 @@
         initMap(search, locations);
       }
 
-      if (XinRunningData.resolveCityKey(search.city)) {
-        var center = XinRunningData.getCityCenter(search.city);
-        finish(center[0], center[1]);
-        return;
-      }
+     
 
       geocodeCity(search.hotel || search.city, function (geoErr, lng, lat) {
         if (geoErr) {
