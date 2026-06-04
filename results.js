@@ -307,7 +307,7 @@
     var startMarker = new AMap.Marker({
       position: initialCenter,
       title: search.hotel || "当前位置",
-      content: '<div style="background:#1f6feb;color:white;padding:6px 10px;border-radius:18px;font-size:14px;font-weight:bold;">📍 起点</div>',
+      content: '<div style="background:white;color:#2f6f4e;border:2px solid #4f9d69;padding:6px 12px;border-radius:999px;font-size:14px;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,0.18);">📍 起点</div>',
       offset: new AMap.Pixel(-24, -24)
     });
     
