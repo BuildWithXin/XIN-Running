@@ -262,9 +262,6 @@
   }
 
   function resolveLocations(search, centerLng, centerLat) {
-    function resolveLocations(search, centerLng, centerLat) {
-      return XinRunningData.getRecommendations(search.city, centerLng, centerLat);
-    }
     return XinRunningData.getRecommendations(search.city, centerLng, centerLat);
   }
 
