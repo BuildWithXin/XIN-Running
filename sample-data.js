@@ -374,11 +374,11 @@ name: "世纪公园（3公里轻松环线）",
 
   function getRecommendations(city, centerLng, centerLat) {
     var key = resolveCityKey(city);
-    /*
+    
     if (key && cityCatalog[key]) {
       return cityCatalog[key].routes.slice(0, MAX_RECOMMENDATIONS).map(cloneRoute);
     }
-      */
+      
     var lng = centerLng || 121.473701;
     var lat = centerLat || 31.230416;
     return buildFallbackRoutes(normalizeCityName(city) || "当前城市", lng, lat);
