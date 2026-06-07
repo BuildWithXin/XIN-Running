@@ -301,16 +301,18 @@
         callback(err);
       });
   }
-
+  
   function initMap(search, locations) {
     var mapEl = document.getElementById("map");
     if (!mapEl || !window.AMap) {
       return;
     }
 
-    var initialCenter = locations[0]
+    var initialCenter = search.startLng && search.startLat
+  ? [search.startLng, search.startLat]
+  : (locations[0]
     ? [locations[0].lng, locations[0].lat]
-    : (XinRunningData.getCityCenter(search.city) || [121.473701, 31.230416]);
+    : (XinRunningData.getCityCenter(search.city) || [121.473701, 31.230416]));
 
     var map = new AMap.Map("map", {
       zoom: 13,
@@ -359,6 +361,8 @@
       }
 
       function finish(lng, lat) {
+        search.startLng = lng;
+search.startLat = lat;
         var locations = resolveLocations(search, lng, lat);
         if (locations.length > MAX_RECOMMENDATIONS) {
           locations = locations.slice(0, MAX_RECOMMENDATIONS);
