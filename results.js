@@ -266,7 +266,7 @@
   }
 
   function geocodeCity(city, callback) {
-    var key = window.XIN_RUNNING_CONFIG && window.XIN_RUNNING_CONFIG.amapKey;
+    var key = getAmapKey();
   
     console.log("进入geocodeCity", city, key ? "有key" : "没key");
   
