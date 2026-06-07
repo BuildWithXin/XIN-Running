@@ -332,7 +332,7 @@
     });
     
     map.add(startMarker);
-    markers.push(startMarker);
+    // markers.push(startMarker);
 
     map.setCity(search.city, function () {
       if (markers.length > 0) {
